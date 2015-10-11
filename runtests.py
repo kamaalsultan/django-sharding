@@ -51,13 +51,10 @@ try:
             "django.contrib.contenttypes",
             "django.contrib.sites",
             "django_sharding",
-            "django_nose",
             "tests",
         ],
         SITE_ID=1,
         MIDDLEWARE_CLASSES=(),
-        TEST_RUNNER='django_nose.NoseTestSuiteRunner',
-        NOSE_ARGS=['--with-coverage', '--cover-package=django_sharding,django_sharding_library']
     )
 
     try:
@@ -69,7 +66,6 @@ try:
         setup()
 
 except ImportError:
-    import traceback
     traceback.print_exc()
     raise ImportError("To fix this error, run: pip install -r requirements-test.txt")
 
